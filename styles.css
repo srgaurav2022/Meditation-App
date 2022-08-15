@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  background: url(./5_6087118889328574596.png);
+  background-size: cover;
+}
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+video {
+  height: 100%;
+  width: 100%;
+}
+.time-select,
+.sound-picker,
+.player-container {
+  height: 80%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.player-container {
+  position: relative;
+}
+.player-container svg {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+}
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  font-size: 2.5rem;
+}
+video {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -10;
+}
+.time-select button,
+.sound-picker button {
+  color: white;
+  min-width: 30%;
+  min-height: 10%;
+  background: none;
+  padding: 0.1rem 0.4rem;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+.time-select button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+.sound-picker button {
+  border: none;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  padding: 2rem;
+}
+.sound-picker button:nth-child(1) {
+  background-color: rebeccapurple;
+}
+.sound-picker button:nth-child(2) {
+  background-color: greenyellow;
+}
+.sound-picker button:hover {
+  background-color: aqua;
+}
+
+.sound-picker button img {
+  width: 100%;
+}
+.play {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .app {
+    flex-direction: column;
+  }
+  .time-select {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .time-select button {
+    display: flex;
+    justify-content: space-around;
+  }
+  .player-container svg {
+    height: 70%;
+  }
+  .play {
+    height: 30%;
+  }
+  .time-display {
+    bottom: -10%;
+  }
+  .sound-picker {
+    width: 90%;
+    flex-direction: row;
+  }
+  .sound-picker button {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    padding: 2rem;
+  }
+}
